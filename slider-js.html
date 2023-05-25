@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      ul li {
+        display: inline-block;
+        font-size: 20px;
+        padding: 12px 20px;
+        list-style: none;
+        border-radius: 20px;
+        font-weight: 600;
+        transition: all 0.34s;
+        cursor: pointer;
+      }
+      ul li:hover {
+        background-color: green;
+      }
+      main {
+        position: relative;
+        width: 80%;
+        min-height: 300px;
+        overflow: hidden;
+      }
+      .leftSide {
+        float: left;
+      }
+      .rightSide {
+        float: left;
+      }
+      .rightSide img {
+        width: 300px;
+      }
+      .section {
+        position: absolute;
+        transform: translateX(110%);
+        transition: all 0.2s ease-in-out;
+      }
+      .active {
+        transform: translateX(0);
+      }
+      .active1 {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="active1" onclick="showSection(this, 'a')">one</li>
+      <li onclick="showSection(this, 'section2')">two</li>
+      <li onclick="showSection(this, 'section3')">three</li>
+      <li onclick="showSection(this, 'section4')">four</li>
+    </ul>
+
+    <main>
+      <section class="section active" id="a">
+        <div class="leftSide">
+          <h1>Welcome to webdevrs</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
+            porro odit, architecto suscipit ducimus facere deserunt voluptatem
+            blanditiis aut dignissimos ipsa excepturi, voluptates veniam
+            recusandae debitis est ex delectus?
+          </p>
+          <button>get in touch</button>
+        </div>
+        <div class="rightSide">
+          <img src="https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg" alt="" />
+        </div>
+      </section>
+
+      <section class="section" id="section2">
+        <div class="leftSide">
+          <h1>Welcome to pakistyan</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
+            porro odit, architecto suscipit ducimus facere deserunt voluptatem
+            blanditiis aut dignissimos ipsa excepturi, voluptates veniam
+            recusandae debitis est ex delectus?
+          </p>
+          <button>get in touch</button>
+        </div>
+        <div class="rightSide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZxVj0ZGs8FnG78Tl-dKvgDUhHlOC7hDskOZV-he&s" alt="" />
+        </div>
+      </section>
+
+      <section class="section" id="section3">
+        <div class="leftSide">
+          <h1>Welcome to lahore</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
+            porro odit, architecto suscipit ducimus facere deserunt voluptatem
+            blanditiis aut dignissimos ipsa excepturi, voluptates veniam
+            recusandae debitis est ex delectus?
+          </p>
+          <button>get in touch</button>
+        </div>
+        <div class="rightSide">
+          <img src="https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg" alt="" />
+        </div>
+      </section>
+
+      <section class="section" id="section4">
+        <div class="leftSide">
+          <h1>Welcome to it tower</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
+            porro odit, architecto suscipit ducimus facere deserunt voluptatem
+            blanditiis aut dignissimos ipsa excepturi, voluptates veniam
+            recusandae debitis est ex delectus?
+          </p>
+          <button>get in touch</button>
+        </div>
+        <div class="rightSide">
+          <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function showSection(button, sectionIndex) {
+        console.log(button, "this", sectionIndex);
+        var sections = document.getElementsByClassName("section");
+        var tabs = document.getElementsByTagName("li");
+        console.log(sections);
+        for (var i = 0; i < sections.length; i++) {
+          sections[i].classList.remove("active");
+          tabs[i].classList.remove("active1");
+        }
+        button.classList.add("active1");
+        var slides = document.getElementById(sectionIndex);
+        slides.classList.add("active");
+      }
+
+      
